@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <af:pageTemplateDef var="attrs">
+    <af:panelSplitter id="pt_ps1" orientation="vertical" splitterPosition="126">
+      <f:facet name="first">
+        <af:panelFormLayout id="pt_pfl1" rows="1" inlineStyle="width:auto;">
+          <f:facet name="footer"/>
+          <af:facetRef facetName="companyLogo"/>
+          <af:spacer width="10" height="10" id="pt_s1"/>
+          <af:outputText value="Shark Fang Financial Services" id="pt_ot1"
+                         inlineStyle="font-size:xx-large; color:Red;"/>
+        </af:panelFormLayout>
+      </f:facet>
+      <f:facet name="second">
+        <af:panelSplitter id="pt_ps2" splitterPosition="226">
+          <f:facet name="first">
+            <af:form id="pt_f1">
+              <af:facetRef facetName="loginForm"/>
+            </af:form>
+          </f:facet>
+          <f:facet name="second">
+            <af:panelGroupLayout layout="scroll"
+                                 xmlns:af="http://xmlns.oracle.com/adf/faces/rich"
+                                 id="pt_pgl1">
+              <af:panelTabbed id="pt_pt1" styleClass="AFStretchWidth">
+                <af:showDetailItem text="My Profile" id="pt_sdi3">
+                  <af:breadCrumbs id="pt_bc1">
+                    <af:commandNavigationItem text="Profile"
+                                              id="pt_cni1"/>
+                    <af:commandNavigationItem text="Car"
+                                              id="pt_cni2"/>
+                    <af:commandNavigationItem text="Premiums"
+                                              id="pt_cni3"/>
+                  </af:breadCrumbs>
+                  <af:facetRef facetName="myProfileInformation"/>
+                </af:showDetailItem>
+                <af:showDetailItem text="Get Quotes" id="pt_sdi1">
+                  <af:facetRef facetName="getQuotesContent"/>
+                </af:showDetailItem>
+                <af:showDetailItem text="About Us" id="pt_sdi2">
+                  <af:outputText value="We are totally Legit." id="pt_ot2"/>
+                </af:showDetailItem>
+              </af:panelTabbed>
+            </af:panelGroupLayout>
+          </f:facet>
+        </af:panelSplitter>
+      </f:facet>
+    </af:panelSplitter>
+    <af:xmlContent>
+      <component xmlns="http://xmlns.oracle.com/adf/faces/rich/component">
+        <display-name>SFFSTemplate</display-name>
+        <facet>
+          <description>
+            Company Logo for display
+          </description>
+          <facet-name>
+            companyLogo
+          </facet-name>
+        </facet>
+        <facet>
+          <description>
+            Company Name for display
+          </description>
+          <facet-name>
+            companyName
+          </facet-name>
+        </facet>
+        <facet>
+          <description>
+            The main content to be displayed on the page
+          </description>
+          <facet-name>
+            getQuotesContent
+          </facet-name>
+        </facet>
+        <facet>
+          <description>
+            Form that will be used to login the user. Can change rendered
+            property to whether login was successful
+          </description>
+          <facet-name>
+            loginForm
+          </facet-name>
+        </facet>
+        <facet>
+        <description>
+            used to show the VO that has the profile information
+        </description>
+          <facet-name>
+            myProfileInformation
+          </facet-name>
+        </facet>
+      </component>
+    </af:xmlContent>
+  </af:pageTemplateDef>
+</jsp:root>
