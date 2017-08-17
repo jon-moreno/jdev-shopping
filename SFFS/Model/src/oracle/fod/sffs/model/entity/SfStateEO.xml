@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfStateEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="SF_STATES"
+  AliasName="SfStateEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="StateId"
+    IsNotNull="true"
+    ColumnName="STATE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_STATES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="State"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="2"
+    ColumnName="STATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_STATES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="2"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SfCity"
+    Association="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc.SfCity"
+    AssociationOtherEnd="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc.SfState"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="StatesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="STATES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfStateEO.StateId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="StatesUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="STATES_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfStateEO.State"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006415">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006415"/>
+      <Attr Name="_checkCondition" Value='"STATE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfStateEO.StateId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006416">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006416"/>
+      <Attr Name="_checkCondition" Value='"STATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfStateEO.State"/>
+    </AttrArray>
+  </Key>
+</Entity>

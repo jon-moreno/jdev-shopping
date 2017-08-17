@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfInsuranceProviderEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="SF_INSURANCE_PROVIDER"
+  AliasName="SfInsuranceProviderEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="IId"
+    IsNotNull="true"
+    ColumnName="I_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_INSURANCE_PROVIDER"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="COMPANY_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_INSURANCE_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyUrl"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="COMPANY_URL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_INSURANCE_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CompanyLogo"
+    Precision="20"
+    ColumnName="COMPANY_LOGO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_INSURANCE_PROVIDER">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SfPremium"
+    Association="oracle.fod.sffs.model.assoc.SfPremiumsSfInsuranceFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.assoc.SfPremiumsSfInsuranceFk1Assoc.SfPremium"
+    AssociationOtherEnd="oracle.fod.sffs.model.assoc.SfPremiumsSfInsuranceFk1Assoc.SfInsuranceProvider"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SfInsuranceProviderPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SF_INSURANCE_PROVIDER_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfInsuranceProviderEO.IId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006427">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006427"/>
+      <Attr Name="_checkCondition" Value='"I_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfInsuranceProviderEO.IId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006428">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006428"/>
+      <Attr Name="_checkCondition" Value='"COMPANY_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fod.sffs.model.entity.SfInsuranceProviderEO.CompanyName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006429">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006429"/>
+      <Attr Name="_checkCondition" Value='"COMPANY_URL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item
+        Value="oracle.fod.sffs.model.entity.SfInsuranceProviderEO.CompanyUrl"/>
+    </AttrArray>
+  </Key>
+</Entity>

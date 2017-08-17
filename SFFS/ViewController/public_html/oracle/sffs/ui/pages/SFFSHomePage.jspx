@@ -1,0 +1,19 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:toolbox id="t1">
+        <af:toolbar id="t2">
+          <af:goButton text="Home" id="gb1" destination="SFFSHomePage"/>
+          <af:goButton text="Get a Quote" id="gb2"
+                       destination="/faces/oracle/sffs/ui/pages/QuoteDashboard.jspx"/>
+          <af:goButton text="Login/Create New User" id="gb3"/>
+        </af:toolbar>
+      </af:toolbox>
+    </af:document>
+  </f:view>
+</jsp:root>

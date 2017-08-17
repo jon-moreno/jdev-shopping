@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application"
+             version="11.1.1.55.36" id="DataBindings" SeparateXMLFiles="false"
+             Package="oracle.fod.sffs.view" ClientType="Generic">
+  <pageMap>
+    <page path="/oracle/sffs/ui/pages/UserDashboard.jspx"
+          usageId="oracle_fod_sffs_view_UserDashboardPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="oracle_fod_sffs_view_UserDashboardPageDef"
+          path="oracle.sffs.ui.pages.UserDashboardPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <BC4JDataControl id="SFFSUserProfileAMDataControl"
+                     Package="oracle.fod.sffs.module"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl"
+                     SupportsTransactions="true" SupportsFindMode="true"
+                     SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true"
+                     Configuration="SFFSUserProfileAMLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

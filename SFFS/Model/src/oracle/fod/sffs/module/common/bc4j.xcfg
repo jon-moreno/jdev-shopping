@@ -1,0 +1,30 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.fod.sffs.module.SFCarAM">
+      <AppModuleConfig name="SFCarAMLocal" ApplicationName="oracle.fod.sffs.module.SFCarAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFCarAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SFCarAMShared" ApplicationName="oracle.fod.sffs.module.SFCarAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFCarAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="oracle.fod.sffs.module.SFPremiumAM">
+      <AppModuleConfig name="SFPremiumAMLocal" ApplicationName="oracle.fod.sffs.module.SFPremiumAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFPremiumAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SFPremiumAMShared" ApplicationName="oracle.fod.sffs.module.SFPremiumAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFPremiumAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+   <AppModuleConfigBag ApplicationName="oracle.fod.sffs.module.SFQuoteAM">
+      <AppModuleConfig name="SFQuoteAMLocal" ApplicationName="oracle.fod.sffs.module.SFQuoteAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFQuoteAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SFQuoteAMShared" ApplicationName="oracle.fod.sffs.module.SFQuoteAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFQuoteAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

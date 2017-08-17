@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="NewQuote">
+    <default-activity id="__1">QuoteDashboard</default-activity>
+    <view id="QuoteDashboard">
+      <page>/oracle/sffs/ui/pages/QuoteDashboard.jspx</page>
+    </view>
+    <view id="QuoteVehicle"></view>
+    <view id="QuoteDriverHistory"></view>
+    <task-flow-return id="Submit">
+      <outcome id="__12">
+        <name>done</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome id="__13">
+        <name>done</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__2">
+      <from-activity-id id="__3">QuoteDashboard</from-activity-id>
+      <control-flow-case id="__5">
+        <from-outcome id="__6">vehicle</from-outcome>
+        <to-activity-id id="__4">QuoteVehicle</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">QuoteVehicle</from-activity-id>
+      <control-flow-case id="__9">
+        <from-outcome id="__11">history</from-outcome>
+        <to-activity-id id="__10">QuoteDriverHistory</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__15">
+      <from-activity-id id="__14">*</from-activity-id>
+      <control-flow-case id="__16">
+        <to-activity-id id="__17">Cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__18">
+      <from-activity-id id="__19">QuoteDriverHistory</from-activity-id>
+      <control-flow-case id="__21">
+        <from-outcome id="__22">submit</from-outcome>
+        <to-activity-id id="__20">Submit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

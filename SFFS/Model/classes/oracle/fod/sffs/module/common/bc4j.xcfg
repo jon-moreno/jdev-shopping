@@ -1,0 +1,12 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<BC4JConfig version="11.1" xmlns="http://xmlns.oracle.com/bc4j/configuration">
+   <AppModuleConfigBag ApplicationName="oracle.fod.sffs.module.SFFSUserProfileAM">
+      <AppModuleConfig name="SFFSUserProfileAMLocal" ApplicationName="oracle.fod.sffs.module.SFFSUserProfileAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFFSUserProfileAM"/>
+      </AppModuleConfig>
+      <AppModuleConfig name="SFFSUserProfileAMShared" ApplicationName="oracle.fod.sffs.module.SFFSUserProfileAM" DeployPlatform="LOCAL" JDBCName="SFFS" jbo.project="oracle.fod.sffs.model.Model">
+         <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+         <Security AppModuleJndiName="oracle.fod.sffs.module.SFFSUserProfileAM"/>
+      </AppModuleConfig>
+   </AppModuleConfigBag>
+</BC4JConfig>

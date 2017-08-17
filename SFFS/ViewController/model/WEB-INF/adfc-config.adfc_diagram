@@ -1,0 +1,35 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<SDM>
+   <OverallProperties
+      id="OverallProperties1"/>
+   <View
+      id="View2">
+      <property
+         name="activityId">SFFSHomePage</property>
+      <property
+         name="page">/oracle/sffs/ui/pages/SFFSHomePage.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>SFFSHomePage&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">136.68945</property>
+      <property
+         name="x">150.0</property>
+   </View>
+   <View
+      id="View3">
+      <property
+         name="activityId">UserDashboard</property>
+      <property
+         name="page">/oracle/sffs/ui/pages/UserDashboard.jspx</property>
+      <property
+         name="description">&lt;html>&lt;p>&lt;b>UserDashboard&lt;/b>&lt;/p>&lt;p>Activity Type:  View&lt;/p></property>
+      <property
+         name="exceptionHandler">false</property>
+      <property
+         name="y">107.79297</property>
+      <property
+         name="x">363.0</property>
+   </View>
+</SDM>

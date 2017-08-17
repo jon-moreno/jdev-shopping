@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <task-flow-definition id="NewUser">
+    <default-activity id="__1">NewUserPersonalInfo</default-activity>
+    <view id="NewUserPersonalInfo"></view>
+    <task-flow-return id="Submit">
+      <outcome id="__3">
+        <name>done</name>
+      </outcome>
+    </task-flow-return>
+    <task-flow-return id="Cancel">
+      <outcome id="__4">
+        <name>done</name>
+      </outcome>
+    </task-flow-return>
+    <control-flow-rule id="__6">
+      <from-activity-id id="__5">*</from-activity-id>
+      <control-flow-case id="__13">
+        <from-outcome id="__14">cancel</from-outcome>
+        <to-activity-id id="__12">Cancel</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+    <control-flow-rule id="__7">
+      <from-activity-id id="__8">NewUserPersonalInfo</from-activity-id>
+      <control-flow-case id="__10">
+        <from-outcome id="__11">submit</from-outcome>
+        <to-activity-id id="__9">Submit</to-activity-id>
+      </control-flow-case>
+    </control-flow-rule>
+  </task-flow-definition>
+</adfc-config>

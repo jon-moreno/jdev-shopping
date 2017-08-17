@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="SFFSHomePage">
+    <page>/oracle/sffs/ui/pages/SFFSHomePage.jspx</page>
+  </view>
+  <view id="UserDashboard">
+    <page>/oracle/sffs/ui/pages/UserDashboard.jspx</page>
+  </view>
+  <managed-bean id="__3">
+    <managed-bean-name id="__2">ToHomeScreen</managed-bean-name>
+    <managed-bean-class id="__4">com.revature.sffs.ToHomeScreen</managed-bean-class>
+    <managed-bean-scope id="__1">pageFlow</managed-bean-scope>
+  </managed-bean>
+</adfc-config>

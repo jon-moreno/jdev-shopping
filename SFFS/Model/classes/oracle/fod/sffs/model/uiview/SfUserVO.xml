@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfUserVO"
+  Version="11.1.1.55.36"
+  SelectList="SfUserEO.ACCOUNT_NUMBER, 
+       SfUserEO.USERNAME, 
+       SfUserEO.PASSWORD, 
+       SfUserEO.EMAIL, 
+       SfUserEO.FIRST_NAME, 
+       SfUserEO.LAST_NAME, 
+       SfGenderEO.GENDER, 
+       SfUserEO.SSN, 
+       SfUserEO.HOUSE_NUMBER, 
+       SfUserEO.STREET_NAME, 
+       SfUserEO.APT_NUMBER, 
+       SfCityEO.CITY, 
+       SfStateEO.STATE, 
+       SfUserEO.ZIP_CODE, 
+       SfUserEO.DRIVERS_LICENSE, 
+       SfCityEO.CITY_ID, 
+       SfStateEO.STATE_ID, 
+       SfUserEO.GENDER_ID, 
+       SfGenderEO.G_ID, 
+       SfUserEO.CITY_ID AS CITY_ID1"
+  FromList="SF_USERS SfUserEO, SF_CITIES SfCityEO, SF_STATES SfStateEO, SF_GENDER SfGenderEO"
+  Where="((SfUserEO.CITY_ID = SfCityEO.CITY_ID) AND (SfCityEO.STATE_ID = SfStateEO.STATE_ID)) AND (SfUserEO.GENDER_ID = SfGenderEO.G_ID)"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SfUserEO"
+    Entity="oracle.fod.sffs.model.entity.SfUserEO"/>
+  <EntityUsage
+    Name="SfCityEO"
+    Entity="oracle.fod.sffs.model.entity.SfCityEO"
+    Association="oracle.fod.sffs.model.entity.SfUsersSfCitiesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfUsersSfCitiesFk1Assoc.SfCity"
+    SourceUsage="oracle.fod.sffs.model.uiview.SfUserVO.SfUserEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfUserEO.CityId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfCityEO.CityId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="SfStateEO"
+    Entity="oracle.fod.sffs.model.entity.SfStateEO"
+    Association="oracle.fod.sffs.model.entity.SfCitiesSfStatesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfCitiesSfStatesFk1Assoc.SfState"
+    SourceUsage="oracle.fod.sffs.model.uiview.SfUserVO.SfCityEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfCityEO.StateId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfStateEO.StateId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <EntityUsage
+    Name="SfGenderEO"
+    Entity="oracle.fod.sffs.model.entity.SfGenderEO"
+    Association="oracle.fod.sffs.model.entity.SfUsersSfGenderFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfUsersSfGenderFk1Assoc.SfGender"
+    SourceUsage="oracle.fod.sffs.model.uiview.SfUserVO.SfUserEO"
+    ReadOnly="true"
+    Reference="true"
+    DeleteParticipant="false"
+    JoinType="INNER JOIN">
+    <DesignTime>
+      <AttrArray Name="_srcAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfUserEO.GenderId"/>
+      </AttrArray>
+      <AttrArray Name="_dstAttributes">
+        <Item Value="oracle.fod.sffs.model.entity.SfGenderEO.GId"/>
+      </AttrArray>
+    </DesignTime>
+  </EntityUsage>
+  <ViewAttribute
+    Name="AccountNumber"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="AccountNumber"
+    EntityUsage="SfUserEO"
+    AliasName="ACCOUNT_NUMBER"/>
+  <ViewAttribute
+    Name="Username"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Username"
+    EntityUsage="SfUserEO"
+    AliasName="USERNAME"/>
+  <ViewAttribute
+    Name="Password"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Password"
+    EntityUsage="SfUserEO"
+    AliasName="PASSWORD"/>
+  <ViewAttribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Email"
+    EntityUsage="SfUserEO"
+    AliasName="EMAIL"/>
+  <ViewAttribute
+    Name="FirstName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="FirstName"
+    EntityUsage="SfUserEO"
+    AliasName="FIRST_NAME"/>
+  <ViewAttribute
+    Name="LastName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="LastName"
+    EntityUsage="SfUserEO"
+    AliasName="LAST_NAME"/>
+  <ViewAttribute
+    Name="Gender"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Gender"
+    EntityUsage="SfGenderEO"
+    AliasName="GENDER"/>
+  <ViewAttribute
+    Name="Ssn"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Ssn"
+    EntityUsage="SfUserEO"
+    AliasName="SSN"/>
+  <ViewAttribute
+    Name="HouseNumber"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="HouseNumber"
+    EntityUsage="SfUserEO"
+    AliasName="HOUSE_NUMBER"/>
+  <ViewAttribute
+    Name="StreetName"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StreetName"
+    EntityUsage="SfUserEO"
+    AliasName="STREET_NAME"/>
+  <ViewAttribute
+    Name="AptNumber"
+    PrecisionRule="true"
+    EntityAttrName="AptNumber"
+    EntityUsage="SfUserEO"
+    AliasName="APT_NUMBER"/>
+  <ViewAttribute
+    Name="City"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="City"
+    EntityUsage="SfCityEO"
+    AliasName="CITY"/>
+  <ViewAttribute
+    Name="State"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="State"
+    EntityUsage="SfStateEO"
+    AliasName="STATE"/>
+  <ViewAttribute
+    Name="ZipCode"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ZipCode"
+    EntityUsage="SfUserEO"
+    AliasName="ZIP_CODE"/>
+  <ViewAttribute
+    Name="DriversLicense"
+    IsUnique="true"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DriversLicense"
+    EntityUsage="SfUserEO"
+    AliasName="DRIVERS_LICENSE"/>
+  <ViewAttribute
+    Name="CityId"
+    IsUpdateable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CityId"
+    EntityUsage="SfCityEO"
+    AliasName="CITY_ID"/>
+  <ViewAttribute
+    Name="StateId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="StateId"
+    EntityUsage="SfStateEO"
+    AliasName="STATE_ID"/>
+  <ViewAttribute
+    Name="GenderId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GenderId"
+    EntityUsage="SfUserEO"
+    AliasName="GENDER_ID"/>
+  <ViewAttribute
+    Name="GId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="GId"
+    EntityUsage="SfGenderEO"
+    AliasName="G_ID"/>
+  <ViewAttribute
+    Name="CityId1"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CityId"
+    EntityUsage="SfUserEO"
+    AliasName="CITY_ID1"/>
+  <AttrArray Name="KeyAttributes">
+    <Item Value="AccountNumber"/>
+  </AttrArray>
+  <ViewLinkAccessor
+    Name="SfCar"
+    ViewLink="oracle.fod.sffs.model.link.SfCarsSfUsersFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <ViewLinkAccessor
+    Name="SfDocument"
+    ViewLink="oracle.fod.sffs.model.link.SfDocumentsSfUsersFk1Link"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+</ViewObject>

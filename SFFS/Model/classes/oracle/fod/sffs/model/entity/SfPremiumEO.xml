@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfPremiumEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="SF_PREMIUMS"
+  AliasName="SfPremiumEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="PId"
+    IsNotNull="true"
+    ColumnName="P_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_PREMIUMS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="IId"
+    IsNotNull="true"
+    ColumnName="I_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_PREMIUMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CId"
+    IsNotNull="true"
+    ColumnName="C_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_PREMIUMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="MonthlyPayment"
+    IsNotNull="true"
+    ColumnName="MONTHLY_PAYMENT"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_PREMIUMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StartDate"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="START_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_PREMIUMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DueDate"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="DUE_DATE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_PREMIUMS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="InsuranceCard"
+    IsQueriable="false"
+    IsNotNull="true"
+    ColumnName="INSURANCE_CARD"
+    SQLType="BLOB"
+    Type="oracle.jbo.domain.BlobDomain"
+    ColumnType="BLOB"
+    TableName="SF_PREMIUMS"/>
+  <AccessorAttribute
+    Name="SfCar"
+    Association="oracle.fod.sffs.model.entity.SfPremiumsSfCarsFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfPremiumsSfCarsFk1Assoc.SfCar"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfPremiumsSfCarsFk1Assoc.SfPremium"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SfInsuranceProvider"
+    Association="oracle.fod.sffs.model.entity.SfPremiumsSfInsuranceFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfPremiumsSfInsuranceFk1Assoc.SfInsuranceProvider"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfPremiumsSfInsuranceFk1Assoc.SfPremium"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SfPremiumsPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SF_PREMIUMS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.PId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006460">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006460"/>
+      <Attr Name="_checkCondition" Value='"P_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.PId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006461">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006461"/>
+      <Attr Name="_checkCondition" Value='"I_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.IId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006462">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006462"/>
+      <Attr Name="_checkCondition" Value='"C_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.CId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006463">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006463"/>
+      <Attr Name="_checkCondition" Value='"MONTHLY_PAYMENT" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.MonthlyPayment"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006464">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006464"/>
+      <Attr Name="_checkCondition" Value='"START_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.StartDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006465">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006465"/>
+      <Attr Name="_checkCondition" Value='"DUE_DATE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.DueDate"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006466">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006466"/>
+      <Attr Name="_checkCondition" Value='"INSURANCE_CARD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.InsuranceCard"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfPremiumsSfCarsFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SF_CARS_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_PREMIUMS_SF_CARS_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.CId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfPremiumsSfInsuranceFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SF_INSURANCE_PROVIDER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_PREMIUMS_SF_INSURANCE__FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfPremiumEO.IId"/>
+    </AttrArray>
+  </Key>
+</Entity>

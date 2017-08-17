@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel"
+                version="11.1.1.55.36" id="UserDashboardPageDef"
+                Package="oracle.sffs.ui.pages">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <iterator Binds="SfCar1" RangeSize="25"
+              DataControl="SFFSUserProfileAMDataControl" id="SfCar1Iterator"/>
+    <iterator Binds="SfPremium2" RangeSize="25"
+              DataControl="SFFSUserProfileAMDataControl"
+              id="SfPremium2Iterator"/>
+  </executables>
+  <bindings>
+    <tree IterBinding="SfCar1Iterator" id="SfCar1">
+      <nodeDefinition DefName="oracle.fod.sffs.model.uiview.SfCarVO"
+                      Name="SfCar10">
+        <AttrNames>
+          <Item Value="Year"/>
+          <Item Value="Make"/>
+          <Item Value="Model"/>
+          <Item Value="Mileage"/>
+          <Item Value="LicensePlate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="SfPremium2Iterator" id="SfPremium2">
+      <nodeDefinition DefName="oracle.fod.sffs.model.uiview.SfPremiumVO"
+                      Name="SfPremium20">
+        <AttrNames>
+          <Item Value="CompanyLogo"/>
+          <Item Value="CompanyName"/>
+          <Item Value="MonthlyPayment"/>
+          <Item Value="DueDate"/>
+          <Item Value="StartDate"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+  </bindings>
+</pageDefinition>

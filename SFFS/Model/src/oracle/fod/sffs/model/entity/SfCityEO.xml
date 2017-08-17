@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfCityEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="SF_CITIES"
+  AliasName="SfCityEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="CityId"
+    IsNotNull="true"
+    ColumnName="CITY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_CITIES"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="City"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="CITY"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_CITIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StateId"
+    IsNotNull="true"
+    ColumnName="STATE_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_CITIES">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SfState"
+    Association="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc.SfState"
+    AssociationOtherEnd="oracle.fod.sffs.model.assoc.SfCitiesSfStatesFk1Assoc.SfCity"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SfUser"
+    Association="oracle.fod.sffs.model.assoc.SfUsersSfCitiesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.assoc.SfUsersSfCitiesFk1Assoc.SfUser"
+    AssociationOtherEnd="oracle.fod.sffs.model.assoc.SfUsersSfCitiesFk1Assoc.SfCity"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <Key
+    Name="SfCitiesPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SF_CITIES_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfCityEO.CityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006419">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006419"/>
+      <Attr Name="_checkCondition" Value='"CITY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfCityEO.CityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006420">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006420"/>
+      <Attr Name="_checkCondition" Value='"CITY" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfCityEO.City"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006421">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006421"/>
+      <Attr Name="_checkCondition" Value='"STATE_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfCityEO.StateId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfCitiesSfStatesFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="STATES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_CITIES_SF_STATES_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfCityEO.StateId"/>
+    </AttrArray>
+  </Key>
+</Entity>

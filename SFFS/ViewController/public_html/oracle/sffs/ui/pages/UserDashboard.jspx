@@ -1,0 +1,93 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1"
+          xmlns:f="http://java.sun.com/jsf/core"
+          xmlns:h="http://java.sun.com/jsf/html"
+          xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view>
+    <af:document id="d1">
+      <af:messages id="m1"/>
+      <af:form id="f1">
+        <af:toolbox id="t1">
+          <af:toolbar id="t2">
+            <af:goButton text="Home" id="gb1" destination="UserDashboard"/>
+            <af:goButton text="Get a Quote" id="gb2" destination="/oracle/sffs/ui/pages/QuoteDashboard"/>
+            <af:goButton text="Add Car" id="gb3"/>
+            <af:goButton text="Documentation" id="gb4"/>
+          </af:toolbar>
+        </af:toolbox>
+        <af:table value="#{bindings.SfCar1.collectionModel}" var="row"
+                  rows="#{bindings.SfCar1.rangeSize}"
+                  emptyText="#{bindings.SfCar1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.SfCar1.rangeSize}"
+                  rowBandingInterval="0"
+                  selectedRowKeys="#{bindings.SfCar1.collectionModel.selectedRow}"
+                  selectionListener="#{bindings.SfCar1.collectionModel.makeCurrent}"
+                  rowSelection="single" id="t3" inlineStyle="height:148px;">
+          <af:column sortProperty="Year" sortable="true"
+                     headerText="#{bindings.SfCar1.hints.Year.label}" id="c5">
+            <af:outputText value="#{row.Year}" id="ot3">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.SfCar1.hints.Year.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="Make" sortable="true"
+                     headerText="#{bindings.SfCar1.hints.Make.label}" id="c3">
+            <af:outputText value="#{row.Make}" id="ot1"/>
+          </af:column>
+          <af:column sortProperty="Model" sortable="true"
+                     headerText="#{bindings.SfCar1.hints.Model.label}" id="c1">
+            <af:outputText value="#{row.Model}" id="ot5"/>
+          </af:column>
+          <af:column sortProperty="Mileage" sortable="true"
+                     headerText="#{bindings.SfCar1.hints.Mileage.label}"
+                     id="c4">
+            <af:outputText value="#{row.Mileage}" id="ot2">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.SfCar1.hints.Mileage.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="LicensePlate" sortable="true"
+                     headerText="#{bindings.SfCar1.hints.LicensePlate.label}"
+                     id="c2">
+            <af:outputText value="#{row.LicensePlate}" id="ot4"/>
+          </af:column>
+        </af:table>
+        <af:table value="#{bindings.SfPremium2.collectionModel}" var="row"
+                  rows="#{bindings.SfPremium2.rangeSize}"
+                  emptyText="#{bindings.SfPremium2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                  fetchSize="#{bindings.SfPremium2.rangeSize}"
+                  rowBandingInterval="0" id="t4" inlineStyle="height:146px;">
+          <af:column sortProperty="CompanyLogo" sortable="false"
+                     headerText="#{bindings.SfPremium2.hints.CompanyLogo.label}"
+                     id="c10">
+            <af:outputText value="#{row.CompanyLogo}" id="ot8"/>
+          </af:column>
+          <af:column sortProperty="CompanyName" sortable="false"
+                     headerText="#{bindings.SfPremium2.hints.CompanyName.label}"
+                     id="c6">
+            <af:outputText value="#{row.CompanyName}" id="ot10"/>
+          </af:column>
+          <af:column sortProperty="MonthlyPayment" sortable="false"
+                     headerText="#{bindings.SfPremium2.hints.MonthlyPayment.label}"
+                     id="c9">
+            <af:outputText value="#{row.MonthlyPayment}" id="ot7">
+              <af:convertNumber groupingUsed="false"
+                                pattern="#{bindings.SfPremium2.hints.MonthlyPayment.format}"/>
+            </af:outputText>
+          </af:column>
+          <af:column sortProperty="DueDate" sortable="false"
+                     headerText="#{bindings.SfPremium2.hints.DueDate.label}"
+                     id="c7">
+            <af:outputText value="#{row.DueDate}" id="ot6"/>
+          </af:column>
+          <af:column sortProperty="StartDate" sortable="false"
+                     headerText="#{bindings.SfPremium2.hints.StartDate.label}"
+                     id="c8">
+            <af:outputText value="#{row.StartDate}" id="ot9"/>
+          </af:column>
+        </af:table>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

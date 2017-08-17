@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfDocumentVO"
+  Version="11.1.1.55.36"
+  SelectList="SfDocumentEO.D_ID, 
+       SfDocumentEO.U_ID, 
+       SfDocumentEO.DOCUMENT"
+  FromList="SF_DOCUMENTS SfDocumentEO"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  PageIterMode="Full"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|VarAccess"/>
+  </DesignTime>
+  <EntityUsage
+    Name="SfDocumentEO"
+    Entity="oracle.fod.sffs.model.entity.SfDocumentEO"/>
+  <ViewAttribute
+    Name="DId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="DId"
+    EntityUsage="SfDocumentEO"
+    AliasName="D_ID"/>
+  <ViewAttribute
+    Name="UId"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="UId"
+    EntityUsage="SfDocumentEO"
+    AliasName="U_ID"/>
+  <ViewAttribute
+    Name="Document"
+    IsQueriable="false"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Document"
+    EntityUsage="SfDocumentEO"
+    AliasName="DOCUMENT"/>
+</ViewObject>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="TestAM"
+  Version="11.1.1.55.36"
+  ClearCacheOnRollback="true">
+  <DesignTime>
+    <Attr Name="_deployType" Value="0"/>
+  </DesignTime>
+  <ViewUsage
+    Name="SfCar1"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfCarVO"/>
+  <ViewUsage
+    Name="SfDocument1"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfDocumentVO"/>
+  <ViewUsage
+    Name="SfPremium1"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfPremiumVO"/>
+  <ViewUsage
+    Name="SfUser1"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfUserVO"/>
+  <ViewUsage
+    Name="SfCities1"
+    ViewObjectName="oracle.fod.sffs.model.view.SfCitiesVVO"/>
+  <ViewUsage
+    Name="SfGender1"
+    ViewObjectName="oracle.fod.sffs.model.view.SfGenderVVO"/>
+  <ViewUsage
+    Name="SfStates1"
+    ViewObjectName="oracle.fod.sffs.model.view.SfStatesVVO"/>
+  <ViewUsage
+    Name="SfInsuranceProvider1"
+    ViewObjectName="oracle.fod.sffs.model.view.SfInsuranceProviderVVO"/>
+  <ViewUsage
+    Name="SfPremium2"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfPremiumVO"/>
+  <ViewUsage
+    Name="SfCar2"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfCarVO"/>
+  <ViewUsage
+    Name="SfDocument2"
+    ViewObjectName="oracle.fod.sffs.model.uiview.SfDocumentVO"/>
+  <ViewUsage
+    Name="SfCities2"
+    ViewObjectName="oracle.fod.sffs.model.view.SfCitiesVVO"/>
+  <ViewLinkUsage
+    Name="SfPremiumsSfCarsFk1Link1"
+    Version="11.1.1.55.36"
+    ViewLinkObjectName="oracle.fod.sffs.model.link.SfPremiumsSfCarsFk1Link"
+    SrcViewUsageName="oracle.fod.sffs.test.TestAM.SfCar1"
+    DstViewUsageName="oracle.fod.sffs.test.TestAM.SfPremium2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SfCarsSfUsersFk1Link1"
+    Version="11.1.1.55.36"
+    ViewLinkObjectName="oracle.fod.sffs.model.link.SfCarsSfUsersFk1Link"
+    SrcViewUsageName="oracle.fod.sffs.test.TestAM.SfUser1"
+    DstViewUsageName="oracle.fod.sffs.test.TestAM.SfCar2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SfDocumentsSfUsersFk1Link1"
+    Version="11.1.1.55.36"
+    ViewLinkObjectName="oracle.fod.sffs.model.link.SfDocumentsSfUsersFk1Link"
+    SrcViewUsageName="oracle.fod.sffs.test.TestAM.SfUser1"
+    DstViewUsageName="oracle.fod.sffs.test.TestAM.SfDocument2"
+    Reversed="false"/>
+  <ViewLinkUsage
+    Name="SfCitiesSfStatesFk1Link1"
+    Version="11.1.1.55.36"
+    ViewLinkObjectName="oracle.fod.sffs.model.link.SfCitiesSfStatesFk1Link"
+    SrcViewUsageName="oracle.fod.sffs.test.TestAM.SfStates1"
+    DstViewUsageName="oracle.fod.sffs.test.TestAM.SfCities2"
+    Reversed="false"/>
+</AppModule>

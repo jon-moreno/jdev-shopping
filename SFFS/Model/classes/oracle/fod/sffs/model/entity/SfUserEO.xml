@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SfUserEO"
+  Version="11.1.1.55.36"
+  DBObjectType="table"
+  DBObjectName="SF_USERS"
+  AliasName="SfUserEO"
+  BindingStyle="OracleName"
+  UseGlueCode="false">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access"/>
+    <AttrArray Name="_publishEvents"/>
+  </DesignTime>
+  <Attribute
+    Name="AccountNumber"
+    IsUnique="true"
+    IsNotNull="true"
+    ColumnName="ACCOUNT_NUMBER"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_USERS"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Username"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="USERNAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Password"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="PASSWORD"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Email"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="EMAIL"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="FirstName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="FIRST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="LastName"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="LAST_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="GenderId"
+    IsNotNull="true"
+    ColumnName="GENDER_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Ssn"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="SSN"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="HouseNumber"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="HOUSE_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="StreetName"
+    IsNotNull="true"
+    Precision="30"
+    ColumnName="STREET_NAME"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="30"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="AptNumber"
+    Precision="20"
+    ColumnName="APT_NUMBER"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="CityId"
+    IsNotNull="true"
+    ColumnName="CITY_ID"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="DriversLicense"
+    IsUnique="true"
+    IsNotNull="true"
+    Precision="20"
+    ColumnName="DRIVERS_LICENSE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="20"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ZipCode"
+    IsNotNull="true"
+    ColumnName="ZIP_CODE"
+    SQLType="NUMERIC"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    TableName="SF_USERS">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="22"/>
+    </DesignTime>
+  </Attribute>
+  <AccessorAttribute
+    Name="SfCar"
+    Association="oracle.fod.sffs.model.entity.SfCarsSfUsersFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfCarsSfUsersFk1Assoc.SfCar"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfCarsSfUsersFk1Assoc.SfUser"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SfDocument"
+    Association="oracle.fod.sffs.model.entity.SfDocumentsSfUsersFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfDocumentsSfUsersFk1Assoc.SfDocument"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfDocumentsSfUsersFk1Assoc.SfUser"
+    Type="oracle.jbo.RowIterator"
+    IsUpdateable="false"/>
+  <AccessorAttribute
+    Name="SfCity"
+    Association="oracle.fod.sffs.model.entity.SfUsersSfCitiesFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfUsersSfCitiesFk1Assoc.SfCity"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfUsersSfCitiesFk1Assoc.SfUser"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <AccessorAttribute
+    Name="SfGender"
+    Association="oracle.fod.sffs.model.entity.SfUsersSfGenderFk1Assoc"
+    AssociationEnd="oracle.fod.sffs.model.entity.SfUsersSfGenderFk1Assoc.SfGender"
+    AssociationOtherEnd="oracle.fod.sffs.model.entity.SfUsersSfGenderFk1Assoc.SfUser"
+    Type="oracle.jbo.server.EntityImpl"
+    IsUpdateable="true"/>
+  <Key
+    Name="SfUsersPk"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SF_USERS_PK"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.AccountNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfUsersUk1">
+    <DesignTime>
+      <Attr Name="_isUnique" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_USERS_UK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Username"/>
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Ssn"/>
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.DriversLicense"/>
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Email"/>
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.AccountNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006431">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006431"/>
+      <Attr Name="_checkCondition" Value='"ACCOUNT_NUMBER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.AccountNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006432">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006432"/>
+      <Attr Name="_checkCondition" Value='"USERNAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Username"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006433">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006433"/>
+      <Attr Name="_checkCondition" Value='"PASSWORD" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Password"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006434">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006434"/>
+      <Attr Name="_checkCondition" Value='"EMAIL" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Email"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006435">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006435"/>
+      <Attr Name="_checkCondition" Value='"FIRST_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.FirstName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006436">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006436"/>
+      <Attr Name="_checkCondition" Value='"LAST_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.LastName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006437">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006437"/>
+      <Attr Name="_checkCondition" Value='"GENDER_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.GenderId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006438">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006438"/>
+      <Attr Name="_checkCondition" Value='"SSN" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.Ssn"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006439">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006439"/>
+      <Attr Name="_checkCondition" Value='"HOUSE_NUMBER" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.HouseNumber"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006440">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006440"/>
+      <Attr Name="_checkCondition" Value='"STREET_NAME" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.StreetName"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006441">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006441"/>
+      <Attr Name="_checkCondition" Value='"CITY_ID" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.CityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006442">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006442"/>
+      <Attr Name="_checkCondition" Value='"DRIVERS_LICENSE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.DriversLicense"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SysC006443">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="SYS_C006443"/>
+      <Attr Name="_checkCondition" Value='"ZIP_CODE" IS NOT NULL'/>
+      <Attr Name="_isCheck" Value="true"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.ZipCode"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfUsersSfCitiesFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SF_CITIES_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_USERS_SF_CITIES_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.CityId"/>
+    </AttrArray>
+  </Key>
+  <Key
+    Name="SfUsersSfGenderFk1">
+    <DesignTime>
+      <Attr Name="_referencedKey" Value="SF_GENDER_PK"/>
+      <Attr Name="_isForeign" Value="true"/>
+      <Attr Name="_DBObjectName" Value="SF_USERS_SF_GENDER_FK1"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="oracle.fod.sffs.model.entity.SfUserEO.GenderId"/>
+    </AttrArray>
+  </Key>
+</Entity>
